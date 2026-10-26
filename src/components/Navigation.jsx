@@ -51,7 +51,12 @@ width:40%;
 const NavContainer = styled.div`
 position:sticky;
 top:30px;
-width: 100%;`
+width: 100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+`
 
 const Input = styled.input`
 width:100%;
@@ -72,7 +77,7 @@ const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 40%;
   transition: 3s;
   border-radius: 50%;
   img {
@@ -259,7 +264,7 @@ const Navigation = () => {
           )}
         </Link>
       </UserItem>
-      <form action="" onSubmit={handleSubmit}>
+      <form action="" onSubmit={handleSubmit} style={{width: "100%"}}>
         <Input
           placeholder="Search Location"
           type="text"
