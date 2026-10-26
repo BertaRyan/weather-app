@@ -112,5 +112,5 @@ code {
 
 .main-container {
   width: 100%;
-  background: red !important;
+  overflow:none;
 }

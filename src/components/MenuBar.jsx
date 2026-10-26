@@ -7,13 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 const MenuBar = ({ isLight, handleLight }) => {
-console.log(isLight,"ISLIGHT")
+
 
   return (
     <TopBar>
       <h2>Weather App</h2>
       <ToggleContainer onClick={handleLight}>
-        <LightIcon >
+        <LightIcon isLight={isLight === true ? isLight : false}  >
           {isLight ? (
             <FontAwesomeIcon icon={faSun} />
           ) : (

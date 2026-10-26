@@ -37,6 +37,7 @@ const Home = () => {
       const { data: weather } = await axios(
         `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=a1555f40f6f487d79fee19621e64cedb&units=imperial`
       );
+
       const {
         name,
         sys: { country },
@@ -48,9 +49,11 @@ const Home = () => {
           0: { description, main },
         },
       } = weather;
+
       const { data: image } = await axios(
-        `https://api.unsplash.com/search/photos?client_id=0W6SuubbBLcxd7rIzK-t1JPVICqxfdYlVmYHPh4ayMY&query=${weatherData.main}`
+        `https://api.unsplash.com/search/photos?client_id=0W6SuubbBLcxd7rIzK-t1JPVICqxfdYlVmYHPh4ayMY&query=${description}`
       );
+
 
       const {
         results: {

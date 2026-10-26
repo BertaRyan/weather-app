@@ -9,16 +9,14 @@ const Nav = styled.nav`
   display: flex;
   background: ${(props) => props.theme.main};
   flex-direction: column;
-  width: 30%;
+  width: 30%; 
   justify-content: flex-start;
   align-items: center;
   border-top: 1px solid ${(props) => props.theme.border};
   border-right: 1px solid ${(props) => props.theme.border};
-  height: 100vh;
   padding: 35px 20px;
   transition: 0.5s;
-  overflow-y: scroll;
-  overflow-x: hidden;
+
 
     &::-webkit-scrollbar {
     width: 20px;
@@ -27,24 +25,34 @@ const Nav = styled.nav`
     width: 15px;
   }
 
-  /* Scrollbar track (background) */
   &::-webkit-scrollbar-track {
     background: lightblue;
     border-radius: 10px;
   }
 
-  /* Scrollbar thumb (the draggable part) */
   &::-webkit-scrollbar-thumb {
     background: red;
     border-radius: 10px;
   }
 
-  /* Thumb on hover */
   &::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+     @media and max-width(1400px){
+min-height:200vh !important;
+color:brown;
+}
+
+@media (max-width:472px){
+width:40%;
 }
 `;
+
+const NavContainer = styled.div`
+position:sticky;
+top:30px;
+width: 100%;`
+
 const Input = styled.input`
 width:100%;
   background: ${(props) => props.theme.secondary};
@@ -94,11 +102,16 @@ const UserItem = styled.div`
     justify-content: space-evenly;
     align-items: center;
 
+     @media (max-width: 400px){
+    flex-direction:column;
+    }
+
     img {
       margin-left: 10px;
       margin-right: 15px;
     }
   }
+   
 `;
 
 const Item = styled.li`
@@ -148,7 +161,6 @@ const Navigation = () => {
   };
 
   const setInStorage = (city) => {
-    console.log(city)
     window.localStorage.setItem("city", JSON.stringify(city));
   };
 
@@ -180,7 +192,6 @@ const Navigation = () => {
         country,
         flag: `https://flagsapi.com/${country}/shiny/24.png`,
       });
-      console.log(user);
     } catch (err) {
       setError(true);
       setLoading(false);
@@ -231,6 +242,7 @@ const Navigation = () => {
 
   return (
     <Nav>
+      <NavContainer>
       <LogoContainer>
         <img
           src="https://cdn.pixabay.com/photo/2023/09/12/20/41/ai-generated-8249560_1280.png"
@@ -260,7 +272,6 @@ const Navigation = () => {
 
       <List>
         {city.map((city) => (
-          console.log(city, "CITY"),
           <Item key={city.value}>
             <CityContainer>
               <img src={city.flagUrl} />
@@ -270,6 +281,7 @@ const Navigation = () => {
           </Item>
         ))}
       </List>
+      </NavContainer>
     </Nav>
   );
 };

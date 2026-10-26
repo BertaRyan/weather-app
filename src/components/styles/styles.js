@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 export const Div = styled.div`
   display: flex;
-  overflow-y: hidden;
+
+   @media (max-width:1400px){
+  flex-direction:column;
+  }
+ 
 `;
 
 export const TopBar = styled.div`
@@ -39,7 +43,8 @@ export const LightIcon = styled.div`
   border-radius: 50%;
   color: ${(props) => props.theme.accent};
   cursor: pointer;
-  margin-left: ${(props) => (props.isLight ? "3px" : "50px")};
+  margin-left: ${(props) => (props.isLight ? "-40px" : "45px")};
+  margin-top:-4px;
   transition: 0.5s;
 `;
 
@@ -52,7 +57,7 @@ border-bottom:1px solid ${(props) => props.theme.border};
   background: ${(props) => props.theme.accent};
   padding: 50px 10px;
   font-size: ${(props) => (props.size ? "32px" : "12px")};
-  transition: 2s;
+  transition: .5s;
   div {
     flex-basis: 40%;
   }
@@ -62,6 +67,10 @@ border-bottom:1px solid ${(props) => props.theme.border};
   p{
     font-size:12px;
     color: ${(props) => props.theme.main}
+  }
+
+  @media (max-width: 700px){
+  flex-direction:column;
   }
 `;
 
@@ -74,6 +83,11 @@ export const MainContainerStyle = styled.div`
   background: ${(props) => props.theme.main};
   transition: 0.5s;
   height:100%;
+
+   @media (max-width:1400px){
+  width:100%;
+  }
+ 
 `;
 
 export const TopContainer = styled.div`
@@ -88,23 +102,23 @@ export const TopContainer = styled.div`
   margin-top: 20px;
   cursor: pointer;
   background-size:120%;
-  transition: 3s;
+  transition: 1s;
   &:hover {
     background-size: 100%;
   }
   h2 {
     margin: 5px 0;
-    font-size: 40px;
+    font-size: 30px;
        position:relative;
     z-index:3;
   }
   h1 {
-    font-size: 18px;
+    font-size: 30px;
        position:relative;
     z-index:3;
   }
   h3 {
-    font-size: 15px;
+    font-size: 30px;
     position:relative;
     z-index:3;
   }
@@ -126,7 +140,11 @@ export const BottomContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   gap: 10px;
-  margin-top: 50px;
+  margin-top: 20px;
+
+  @media (max-width: 1400px){
+  justify-content: space-between;
+  }
 `;
 
 export const BoxContainer = styled.div`
@@ -134,18 +152,21 @@ export const BoxContainer = styled.div`
     position:relative;
   background-size: 200%;
   text-align: center;
-  padding: 50px 25px;
+  padding: 25px 0px;
   color: white;
-  flex-basis: 23%;
+  flex-basis: 49%;
   background-image: url(${({ background }) => background});
   backgound-size: cover;
   border-radius: 25px;
-  transition: 3s;
+  transition: 1s;
+  box-sizing:border-box;
+  margin:0 !important;
   &:hover {
     background-size: 220%;
   }
   h1 {
     font-size: 25px;
+    margin:0;
      position:relative;
     z-index:3;
   }
@@ -168,16 +189,24 @@ export const BoxContainer = styled.div`
     width:100%;
     height:100%;
     }
+
+      @media (max-width:1400px){
+  flex-basis: 49%;
+  
+  }
+
+  @media (max-width:740px){
+  flex-basis: 100%;
+  }
 `;
 
 export const VerticalContainer = styled.div`
   position:relative;
-  padding: 15px 40px;
+  padding: 20px 40px;
   border-left: 1px solid;
   border-bottom: 1px solid ${(props) => props.theme.border};
   background: ${(props) => props.theme.main};
   width: 100%;
-  
   transition: 0.2s;
   &:hover {
     border-left: 3px solid ${(props) => props.theme.border};
@@ -214,7 +243,7 @@ export const InnerVerticalContainer = styled.div`
 export const SideContainerStyled = styled.div`
   display: flex;
   flex-direction: column;
-  flex-basis: 65%;
+  flex-basis: 50%;
   text-align:left;
 `;
 

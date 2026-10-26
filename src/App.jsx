@@ -51,7 +51,7 @@ const App = () => {
       <div className='main-container'>
         <Router>
           <MenuBar isLight={isLight} handleLight={handleLight} />
-          <div style={{ display: "flex", background: isLight ? lightTheme.main : darkTheme. main, height:"94vh",overflow:"scroll"  }}>
+          <div style={{ display: "flex", background: isLight ? lightTheme.main : darkTheme. main,   }}>
             <Navigation />
 
             <Routes>
