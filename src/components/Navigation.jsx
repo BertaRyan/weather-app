@@ -264,6 +264,7 @@ const Navigation = () => {
           )}
         </Link>
       </UserItem>
+      
       <form action="" onSubmit={handleSubmit} style={{width: "100%"}}>
         <Input
           placeholder="Search Location"
