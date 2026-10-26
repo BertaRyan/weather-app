@@ -75,6 +75,7 @@ border-bottom:1px solid ${(props) => props.theme.border};
 `;
 
 export const MainContainerStyle = styled.div`
+position:sticky;
   width: 60%;
   padding: 20px 40px;
   display: flex;

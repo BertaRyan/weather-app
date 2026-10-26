@@ -16,7 +16,6 @@ const City = () => {
   const {cityId} = useParams()
 
 
-  console.log(cityId, "MATCH********************");
 
   const getLocation = async () => {
     try {
@@ -38,7 +37,6 @@ const City = () => {
       const { data: image } = await axios(
         `https://api.unsplash.com/search/photos?client_id=0W6SuubbBLcxd7rIzK-t1JPVICqxfdYlVmYHPh4ayMY&query=${weatherData.main}`
       );
-      console.log(weather);
       const {
         results: {
           0: {
